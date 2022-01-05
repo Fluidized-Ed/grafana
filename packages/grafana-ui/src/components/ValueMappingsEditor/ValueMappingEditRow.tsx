@@ -113,8 +113,12 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
     { label: 'True', value: SpecialValueMatch.True, description: 'Boolean true values' },
     { label: 'False', value: SpecialValueMatch.False, description: 'Boolean false values' },
     { label: 'Empty', value: SpecialValueMatch.Empty, description: 'Empty string' },
-    { label: 'Infinity', value: SpecialValueMatch.Infinity, description: 'Matches against Infinity' },
-    { label: '-Infinity', value: SpecialValueMatch.NegativeInfinity, description: 'Matches against -Infinity' },
+    { label: 'Infinity', value: SpecialValueMatch.Infinity, description: 'Matches against infinite values' },
+    {
+      label: '-Infinity',
+      value: SpecialValueMatch.NegativeInfinity,
+      description: 'Matches against negative infinite values',
+    },
   ];
 
   return (
