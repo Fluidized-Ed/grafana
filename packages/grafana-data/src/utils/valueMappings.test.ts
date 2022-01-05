@@ -50,6 +50,20 @@ const testSet1: ValueMapping[] = [
       result: { text: 'it is false' },
     },
   },
+  {
+    type: MappingType.SpecialValue,
+    options: {
+      match: SpecialValueMatch.Infinity,
+      result: { text: 'it is infinity' },
+    },
+  },
+  {
+    type: MappingType.SpecialValue,
+    options: {
+      match: SpecialValueMatch.NegativeInfinity,
+      result: { text: 'it is negative infinity' },
+    },
+  },
 ];
 
 const testSet2: ValueMapping[] = [
@@ -112,6 +126,16 @@ describe('Format value with value mappings', () => {
   it('should return match result for nan value', () => {
     const value = Number.NaN;
     expect(getValueMappingResult(testSet1, value as any)).toEqual({ text: 'it is nan' });
+  });
+
+  it('should return match result for an infinite value', () => {
+    const value = Infinity;
+    expect(getValueMappingResult(testSet1, value as any)).toEqual({ text: 'it is infinity' });
+  });
+
+  it('should return match result for a negative infinite value', () => {
+    const value = -Infinity;
+    expect(getValueMappingResult(testSet1, value as any)).toEqual({ text: 'it is negative infinity' });
   });
 
   it('should return range mapping that matches first', () => {

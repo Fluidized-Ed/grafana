@@ -105,6 +105,18 @@ export function getValueMappingResult(valueMappings: ValueMapping[], value: any)
             }
             break;
           }
+          case SpecialValueMatch.Infinity: {
+            if (value === Infinity) {
+              return vm.options.result;
+            }
+            break;
+          }
+          case SpecialValueMatch.NegativeInfinity: {
+            if (value === -Infinity) {
+              return vm.options.result;
+            }
+            break;
+          }
         }
     }
   }

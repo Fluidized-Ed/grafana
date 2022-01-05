@@ -81,6 +81,8 @@ export enum SpecialValueMatch {
   NaN = 'nan',
   NullAndNaN = 'null+nan',
   Empty = 'empty',
+  Infinity = '∞',
+  NegativeInfinity = '-∞',
 }
 
 /**
